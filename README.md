@@ -1,4 +1,13 @@
-ขั้นตอนที่ 1: Setup
+# 📚 Library Management System API (Week 7 Lab)
+
+ระบบบริหารจัดการห้องสมุดที่พัฒนาด้วย Node.js, Express และ SQLite3 เพื่อจัดการข้อมูลหนังสือ สมาชิก และการยืม-คืน
+
+---
+
+## 🛠️ ขั้นตอนที่ 1: Setup (การติดตั้ง)
+รันคำสั่งเหล่านี้ใน Terminal เพื่อเตรียมสภาพแวดล้อม:
+
+```bash
 mkdir week7-lab
 cd week7-lab
 npm init -y
@@ -10,24 +19,23 @@ touch server.js README.md
 API Endpoints 
 ต้องมี 15 Endpoints:
 
-Books API (5 endpoints)
-GET    /api/books              # ดึงหนังสือทั้งหมด
-GET    /api/books/:id          # ดึงหนังสือ 1 เล่ม
-GET    /api/books/search?q=    # ค้นหาหนังสือ
-POST   /api/books              # เพิ่มหนังสือ
-PUT    /api/books/:id          # แก้ไขหนังสือ
-Members API (4 endpoints)
-GET    /api/members            # ดึงสมาชิกทั้งหมด
-GET    /api/members/:id        # ดึงสมาชิก 1 คน
-POST   /api/members            # เพิ่มสมาชิก
-PUT    /api/members/:id        # แก้ไขสมาชิก
-Borrowings API (6 endpoints)
-GET    /api/borrowings                    # ดึงรายการยืมทั้งหมด
-GET    /api/borrowings/:id                # ดึงรายการยืม 1 รายการ
-GET    /api/borrowings/member/:memberId   # ดึงรายการยืมของสมาชิก
-POST   /api/borrowings/borrow             # ยืมหนังสือ
-PUT    /api/borrowings/:id/return         # คืนหนังสือ
-GET    /api/borrowings/overdue            # ดูรายการเกินกำหนด
+## 🚀 API Endpoints (15 รายการ)
+
+### Books API (5 endpoints)
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| GET | `/api/books` | ดึงหนังสือทั้งหมด |
+| GET | `/api/books/:id` | ดึงหนังสือ 1 เล่ม |
+| GET | `/api/books/search?q=` | ค้นหาหนังสือ |
+| POST | `/api/books` | เพิ่มหนังสือ |
+| PUT | `/api/books/:id` | แก้ไขหนังสือ |
+
+### Borrowings API (6 endpoints)
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| GET | `/api/borrowings` | ดึงรายการยืมทั้งหมด |
+| PUT | `/api/borrowings/:id/return` | คืนหนังสือ |
+| GET | `/api/borrowings/overdue` | ดูรายการเกินกำหนด |
 Test Case 1: Borrow Book (Success)
 ![Borrow Book (Success)](./assets/Test%20Case%201:%20Borrow%20Book%20(Success).png)
 Test Case 2: Borrow Book (Fail - No copies)
